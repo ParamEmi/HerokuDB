@@ -18,8 +18,8 @@ app.listen(process.env.PORT, () => {
   console.log("app is listening on " + process.env.PORT);
 });
 
-app.use("/", (req, res)=>{
-  res.send("ggggggggggggggggggggggggggggg");
+app.use("/test",  (req,res)=>{
+  res.send("testing message 2")
 });
 app.use("/user", require("./routes.js/userRoutes"));
 app.use("/event", require("./routes.js/eventRoutes"));
