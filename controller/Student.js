@@ -20,21 +20,23 @@ const addStudent = async (req, res) => {
       name: req.body.firstName,
       subject: req.body.address,
     };
-    nodemailer({ data });
-    
-    //const result = await Student.create(stdDetails);
 
-      const result = await Student.aggregate(
-          [
-            { $set: { School: { $concatArrays: [ "$School", [ 7 ] ] } } }
-        ]
-       )
+    // nodemailer({ data });
+    
+    const result = await Student.create(stdDetails);
+
+      // const result = await Student.aggregate(
+      //     [
+      //       { $set: { School: { $concatArrays: [ "$School", [ 7 ] ] } } }
+      //   ]
+      //  )
 
     const  stdMarks =  {
       percentage:req.body.percentage,
       studentid:result._id
     
     }
+
     //const result_1 = await StudentMarks.create(stdMarks);
 
     return res.status(200).send({
