@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 // Routes
 
 app.listen(process.env.PORT, () => {
-  console.log("app is listening on " + process.env.PORT);
+  console.log("app is listening on port " + process.env.PORT);
 });
 
 app.use("/test",  (req,res)=>{
